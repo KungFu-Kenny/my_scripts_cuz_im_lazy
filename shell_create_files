@@ -1,0 +1,20 @@
+#!/bin/bash
+
+for f in {a..z} {A..Z} {0..99}
+do
+    echo hello > "$f.txt"
+done
+
+#You can do numbered files with leading zeros:
+
+for i in {0..100}
+do
+    echo hello > "File$(printf "%03d" "$i").txt"
+done
+
+#or, in Bash 4:
+
+for i in {000..100}
+do
+    echo hello > "File${i}.txt"
+done
